@@ -23,7 +23,7 @@ class EmployeeSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             $data = [];
 
-            for ($y = 0; $y < 20; $y++) {
+            for ($y = 0; $y < 50; $y++) {
                 $employee = [
                     'birthdate' => $faker->dateTimeBetween('-35 years', '-18 years'),
                     'department_id' => $faker->numberBetween(1, 6),

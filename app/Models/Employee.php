@@ -31,4 +31,9 @@ class Employee extends Model
         'payment_value',
         'hour_per_month',
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }

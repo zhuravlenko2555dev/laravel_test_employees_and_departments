@@ -16,7 +16,7 @@ class EmployeeController extends Controller
     public function all(Request $request)
     {
         $perPage = $request->get('perPage', 10);
-        $data = Employee::query()->paginate($perPage);
+        $data = Employee::query()->with('department')->paginate($perPage);
         return response()->json($data);
     }
 
@@ -30,7 +30,7 @@ class EmployeeController extends Controller
     public function allByDepartment(Request $request, int $department)
     {
         $perPage = $request->get('perPage', 10);
-        $data = Employee::query()->where('department_id', $department)->paginate($perPage);
+        $data = Employee::query()->with('department')->where('department_id', $department)->paginate($perPage);
         return response()->json($data);
     }
 }

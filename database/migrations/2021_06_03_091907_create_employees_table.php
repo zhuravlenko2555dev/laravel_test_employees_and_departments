@@ -23,7 +23,7 @@ class CreateEmployeesTable extends Migration
             $table->foreignId('department_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
             $table->string('position');
             $table->unsignedTinyInteger('payment_type');
-            $table->unsignedTinyInteger('payment_value');
+            $table->unsignedSmallInteger('payment_value');
             $table->unsignedTinyInteger('hour_per_month')->default(0);
         });
     }
