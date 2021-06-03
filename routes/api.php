@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('employes', [EmployeeController::class, 'all']);
+Route::get('employes/{department}', [EmployeeController::class, 'allByDepartment']);
+Route::get('departments', [DepartmentController::class, 'index']);
