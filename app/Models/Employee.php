@@ -9,6 +9,9 @@ class Employee extends Model
 {
     use HasFactory;
 
+    const PAYMENT_TYPE_MONTHLY = 1;
+    const PAYMENT_TYPE_HOURLY = 2;
+
     public $timestamps = false;
 
     /**

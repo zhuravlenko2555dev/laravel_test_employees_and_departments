@@ -21,7 +21,7 @@ class CreateEmployeesTable extends Migration
             $table->date('birthdate');
             $table->enum('gender', ['m', 'f']);
             $table->foreignId('department_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
-            $table->unsignedTinyInteger('position');
+            $table->string('position');
             $table->unsignedTinyInteger('payment_type');
             $table->unsignedTinyInteger('payment_value');
             $table->unsignedTinyInteger('hour_per_month')->default(0);
